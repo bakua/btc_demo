@@ -10,12 +10,18 @@ class AppWidget extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BTC Wallet',
       theme: ThemeData(
-        colorScheme: ColorScheme.light(
+        useMaterial3: true,
+        // Normally I would recommend to use a custom text theme,
+        // respecting the company design language and then using theme.textTheme.title/body/headline1/etc.
+        textTheme: Typography.whiteHelsinki,
+        colorScheme: const ColorScheme.light(
           primary: Colors.deepOrange,
         ),
-        useMaterial3: true,
       ),
-      home: const HomePage(),
+      initialRoute: HomePage.routeName,
+      routes: {
+        HomePage.routeName: (context) => const HomePage(),
+      },
     );
   }
 }

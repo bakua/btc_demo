@@ -1,4 +1,4 @@
-import 'package:btc_demo/ui/home/bitcoin_icon_widget.dart';
+import 'package:btc_demo/ui/widgets/background_widget/bitcoin_icon_widget.dart';
 import 'package:flutter/material.dart';
 
 class BackgroundWidget extends StatelessWidget {
@@ -11,19 +11,15 @@ class BackgroundWidget extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                Colors.red,
-                Colors.orange,
-                Colors.deepOrange,
-              ],
+              colors: [Colors.red, Colors.orange, Colors.deepOrange],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
           ),
         ),
-        Positioned(top: 60, right: -120, child: BitcoinIconWidget(size: 280)),
+        const Positioned(top: 60, right: -120, child: BitcoinIconWidget(size: 280)),
       ],
     );
   }

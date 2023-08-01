@@ -1,29 +1,24 @@
 import 'package:bloc/bloc.dart';
-import 'package:coingecko_api/coingecko_api.dart';
-import 'package:coingecko_api/data/enumerations.dart';
+import 'package:btc_demo/lib/coins_price_repository.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 part 'coin_price_chart_event.dart';
 
 part 'coin_price_chart_state.dart';
 
+//todo implement example test for this
 class CoinPriceChartBloc extends Bloc<CoinPriceChartEvent, CoinPriceChartState> {
-  final CoinGeckoApi coinGeckoApi;
+  final CoinsPriceRepository coinsPriceRepository;
 
-  CoinPriceChartBloc(this.coinGeckoApi) : super(CoinPriceChartInitialState()) {
+  CoinPriceChartBloc(this.coinsPriceRepository) : super(CoinPriceChartInitialState()) {
     on<LoadCoinPriceChartEvent>((event, emit) async {
       try {
-        final marketChart = await coinGeckoApi.coins.getCoinMarketChart(
-          id: event.coinId,
-          vsCurrency: 'usd',
-          days: 3,
-          interval: CoinMarketChartInterval.hourly,
-        );
         final List<({DateTime date, FlSpot spot})> spots = [];
         var minPrice = double.infinity;
         var maxPrice = 0.0;
 
-        for (final (index, data) in marketChart.data.indexed) {
+        final coinPriceHistory = await coinsPriceRepository.getCoinToUsdPriceHistory(coinId: event.coinId, days: 3);
+        for (final (index, data) in coinPriceHistory.indexed) {
           final price = data.price ?? 0;
 
           if (price < minPrice) {

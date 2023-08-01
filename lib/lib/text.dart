@@ -28,3 +28,7 @@ String formatCurrency(double price, String currencyCode, {String? symbol}) {
   final formatter = NumberFormat.currency(name: currencyCode, symbol: symbol)..minimumFractionDigits = 0;
   return formatter.format(price);
 }
+
+String formatUSD(double price) {
+  return formatCurrency(price, 'USD', symbol: '\$');
+}

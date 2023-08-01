@@ -1,6 +1,4 @@
-import 'package:btc_demo/ui/home/background_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:number_to_text_converter/number_to_text_converter.dart';
 
 class BitcoinIconWidget extends StatelessWidget {
   final double size;

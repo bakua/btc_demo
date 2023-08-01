@@ -43,11 +43,11 @@ class CoinPriceChartWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(formatCurrency(maxPrice, 'USD', symbol: '\$'), style: const TextStyle(color: Colors.white54, fontSize: 12)),
-                      Text(formatCurrency((minPrice + maxPrice) / 2, 'USD', symbol: '\$'), style: const TextStyle(color: Colors.white54, fontSize: 12)),
+                      Text(formatUSD(maxPrice), style: const TextStyle(color: Colors.white54, fontSize: 12)),
+                      Text(formatUSD((minPrice + maxPrice) / 2), style: const TextStyle(color: Colors.white54, fontSize: 12)),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 30),
-                        child: Text(formatCurrency(minPrice, 'USD', symbol: '\$'), style: const TextStyle(color: Colors.white54, fontSize: 12)),
+                        child: Text(formatUSD(minPrice), style: const TextStyle(color: Colors.white54, fontSize: 12)),
                       ),
                     ],
                   ),

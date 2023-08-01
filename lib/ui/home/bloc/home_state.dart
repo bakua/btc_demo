@@ -6,8 +6,12 @@ class HomeInitialState extends HomeState {}
 
 class HomeSuccessState extends HomeState {
   final Wallet wallet;
+  final double btcToUsdPrice;
 
-  HomeSuccessState(this.wallet);
+  HomeSuccessState({
+    required this.wallet,
+    required this.btcToUsdPrice,
+  });
 }
 
 class HomeFailedState extends HomeState {
