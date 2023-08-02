@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:btc_demo/lib/coins_price_repository.dart';
+import 'package:equatable/equatable.dart';
 import 'package:fl_chart/fl_chart.dart';
 
 part 'coin_price_chart_event.dart';
 
 part 'coin_price_chart_state.dart';
 
-//todo implement example test for this
 class CoinPriceChartBloc extends Bloc<CoinPriceChartEvent, CoinPriceChartState> {
   final CoinsPriceRepository coinsPriceRepository;
 
@@ -33,12 +33,13 @@ class CoinPriceChartBloc extends Bloc<CoinPriceChartEvent, CoinPriceChartState> 
         }
 
         if (maxPrice < minPrice) {
-          maxPrice = minPrice;
+          minPrice = maxPrice;
         }
 
         emit(CoinPriceChartSuccessState(spots: spots, minPrice: minPrice, maxPrice: maxPrice));
       } catch (e) {
         emit(CoinPriceChartFailedState(e));
+        // Here we can log the error to a crash reporting service.
       }
     });
   }

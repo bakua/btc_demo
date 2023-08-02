@@ -3,7 +3,6 @@ import 'package:btc_demo/lib/text.dart';
 import 'package:flutter/material.dart';
 import 'package:number_to_text_converter/number_to_text_converter.dart';
 
-//todo implement example test for this
 class FiatBalanceCardWidget extends StatelessWidget {
   final Wallet wallet;
 

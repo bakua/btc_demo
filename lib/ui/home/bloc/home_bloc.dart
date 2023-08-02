@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:btc_demo/lib/coins_price_repository.dart';
 import 'package:btc_demo/lib/model/wallet.dart';
 import 'package:btc_demo/lib/wallet_repository.dart';
+import 'package:equatable/equatable.dart';
 
 part 'home_event.dart';
 
 part 'home_state.dart';
 
-//todo implement example test for this
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   final WalletRepository walletRepository;
   final CoinsPriceRepository coinsPriceRepository;
@@ -25,6 +25,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         emit(HomeSuccessState(wallet: wallet, btcToUsdPrice: btcToUsdPrice));
       } catch (e) {
         emit(HomeFailedState(e));
+        // Here we can log the error to a crash reporting service.
       }
     });
   }

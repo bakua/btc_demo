@@ -1,3 +1,5 @@
+#todo build_runner generated files should not be commited but in this repository they are so you don't have to run the command
+
 # Miscellaneous
 *.class
 *.log

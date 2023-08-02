@@ -2,7 +2,6 @@ import 'package:btc_demo/lib/backend_api.dart';
 import 'package:btc_demo/lib/coins_price_repository.dart';
 import 'package:btc_demo/lib/model/wallet.dart';
 
-//todo implement example test for this
 class WalletRepository {
   final BackendApi backendApi;
   final CoinsPriceRepository coinsPriceRepository;
