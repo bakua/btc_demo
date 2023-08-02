@@ -1,16 +1,10 @@
-# btc_demo
+## What is this?
 
-A demo BTC wallet project.
+This is an example application to present an approach to build Flutter codebase. 
 
-## Getting Started
+![App screenshot](screenshot.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## How to build?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Just run it. The project relies on build_runner but in this case generated files are included in repository for convenience.
