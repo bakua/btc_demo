@@ -1,4 +1,5 @@
 import 'package:btc_demo/ui/home/home_page.dart';
+import 'package:btc_demo/ui/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {
@@ -21,6 +22,7 @@ class AppWidget extends StatelessWidget {
       initialRoute: HomePage.routeName,
       routes: {
         HomePage.routeName: (context) => const HomePage(),
+        ProfilePage.routeName: (context) => const ProfilePage(),
       },
     );
   }

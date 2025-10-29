@@ -18,10 +18,16 @@ dependencies:
   get_it: ^7.6.0
   intl: ^0.17.0
   number_to_text_converter: ^1.0.4
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
   flutter_test:
     sdk: flutter
+  appium_flutter_server: 0.0.33
   flutter_lints: ^2.0.2
   mockito: ^5.4.2
   build_runner: ^2.4.6
@@ -29,3 +35,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/cat_profile.png

@@ -16,7 +16,6 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     this.walletRepository,
     this.coinsPriceRepository,
   ) : super(HomeInitialState()) {
-
     on<LoadHomeEvent>((event, emit) async {
       try {
         final wallet = await walletRepository.getWallet();
@@ -24,7 +23,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
         emit(HomeSuccessState(wallet: wallet, btcToUsdPrice: btcToUsdPrice));
       } catch (e) {
-        emit(HomeFailedState(e));
+        emit(HomeFailedState(e.toString()));
         // Here we can log the error to a crash reporting service.
       }
     });

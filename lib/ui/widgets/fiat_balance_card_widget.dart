@@ -35,8 +35,9 @@ class FiatBalanceCardWidget extends StatelessWidget {
                 children: [
                   Text('Fiat balance', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: theme.primaryColor)),
                   const SizedBox(height: 8),
-                  Text(formatUSD(wallet.usdBalance), style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.black87)),
+                  Text(formatUSD(wallet.usdBalance), key: const ValueKey('fiat_balance'), style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.black87)),
                   RichText(
+                    key: const ValueKey('number_to_words'),
                     text: TextSpan(
                       children: [
                         for (final (index, line) in lines.indexed)
@@ -52,7 +53,7 @@ class FiatBalanceCardWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                ],
+                ], 
               ),
             ),
             SizedBox(

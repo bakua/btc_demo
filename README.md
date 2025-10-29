@@ -1,3 +1,7 @@
+## Tests:
+Just run flutter test integration_test/
+There are 4 tests in total located there.
+
 ## What is this?
 
 This is an example application to present an approach to build Flutter codebase. 

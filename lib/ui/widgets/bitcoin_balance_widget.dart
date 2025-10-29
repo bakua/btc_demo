@@ -35,7 +35,7 @@ class BitcoinBalanceWidget extends StatelessWidget {
             ],
           ),
         ),
-        Text('(1 BTC = ${formatUSD(btcToUsdPrice)})', style: const TextStyle(color: Colors.white70)),
+        Text('(1 BTC = ${formatUSD(btcToUsdPrice)})', key: const ValueKey('btc_price_tag'), style: const TextStyle(color: Colors.white70)),
       ],
     );
   }
